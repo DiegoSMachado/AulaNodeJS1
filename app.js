@@ -1,4 +1,4 @@
-console.log("Starting app.js");
+// console.log("Starting app.js");
 
 const fs = require('fs');
 const _ = require('lodash');
@@ -7,8 +7,8 @@ const notes = require('./notes.js');
 
 const argv = yargs.argv;
 var command = argv._[0];
-console.log('command: ', command);
-console.log('Yargs ',argv);
+// console.log('command: ', command);
+// console.log('Yargs ',argv);
 
 if (command === 'add'){
 	var note = notes.addNote(argv.title, argv.body);
@@ -26,12 +26,12 @@ if (command === 'add'){
 	notes.getAll();
 
 } else if (command === 'read') {
-	notes.getNote(argv.title);
+	var note = notes.getNote(argv.title);
 	if (note) {
 		console.log('Nota Encontrada!');
 		console.log('------------');
 		console.log('Titulo: '+note.title);
-		console.log('Titulo: '+note.body);
+		console.log('Nota: '+note.body);
 	} else {
 		console.log('Nota não encontrada');
 		console.log('------------');

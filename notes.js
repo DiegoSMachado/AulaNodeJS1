@@ -1,4 +1,4 @@
-console.log("Iniciando Notes.js");
+// console.log("Iniciando Notes.js");
 const fs = require('fs');
 
 var fetchNotes = () => {
@@ -31,8 +31,14 @@ var getAll = () => {
   console.log('getting all notea')
 };
 
-var getNote = () => {
-  console.log('getting all notea')
+var getNote = (title) => {
+  var notes = fetchNotes(); //Buscar todas as notas
+  var note = {title};
+
+  var searchNotes = notes.filter((note) => note.title == title);
+  if(searchNotes.length !== 0){
+    return searchNotes[0];
+  }
 };
 
 var removeNote = (title) => {
@@ -42,7 +48,6 @@ var removeNote = (title) => {
   var otherNotes = notes.filter((note) => note.title !== title);
   if(delNotes.length !== 0){
     saveNotes(otherNotes);
-    console.log(title);
     return title;
   }
 };
