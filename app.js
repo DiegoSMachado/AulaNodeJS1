@@ -14,9 +14,7 @@ if (command === 'add'){
 	var note = notes.addNote(argv.title, argv.body);
 	if (note) {
 		console.log('Nota Criada!');
-		console.log('------------');
-		console.log('Titulo: ' + note.title);
-		console.log('Titulo: ' + note.body);
+		notes.logNote(note);
 	} else {
 		console.log('Titulo já existente');
 		console.log('------------');
@@ -28,10 +26,8 @@ if (command === 'add'){
 } else if (command === 'read') {
 	var note = notes.getNote(argv.title);
 	if (note) {
-		console.log('Nota Encontrada!');
-		console.log('------------');
-		console.log('Titulo: '+note.title);
-		console.log('Nota: '+note.body);
+		console.log('Nota Encontrada');
+		notes.logNote(note);
 	} else {
 		console.log('Nota não encontrada');
 		console.log('------------');

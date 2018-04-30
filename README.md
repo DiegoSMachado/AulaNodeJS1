@@ -1,6 +1,7 @@
-Esta e a aula que estou seguindo na Udemy!
+The Complete NodeJS Developer Course
+Andrew Mead, Rob Percival.
 
-Não é nada importante!
-Sim é importante, para mim!
+Esta e a aula da Udemy que estou seguindo passo a passo.
 
-Rumo a programação !!!! 
+NÃ£o Ã© nada importante!
+- Sistema de CRUD de notas com JSON atravÃ©s da linha de comando

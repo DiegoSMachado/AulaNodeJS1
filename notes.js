@@ -10,6 +10,8 @@ var fetchNotes = () => {
   }
 };
 
+
+
 var saveNotes = (notes) => {
   fs.writeFileSync('notes-data.json',JSON.stringify(notes));
 };
@@ -28,17 +30,16 @@ var addNote = (title, body) => {
 };
 
 var getAll = () => {
-  console.log('getting all notea')
+  return fetchNotes();
 };
 
 var getNote = (title) => {
   var notes = fetchNotes(); //Buscar todas as notas
   var note = {title};
-
+  console.log(note);
   var searchNotes = notes.filter((note) => note.title == title);
-  if(searchNotes.length !== 0){
-    return searchNotes[0];
-  }
+  console.log(searchNotes);
+  return searchNotes[0];
 };
 
 var removeNote = (title) => {
@@ -52,9 +53,16 @@ var removeNote = (title) => {
   }
 };
 
+var logNote = (note) => {
+  console.log('------------');
+  console.log('Titulo: ' + note.title);
+  console.log('Titulo: ' + note.body);
+};
+
 module.exports = {
   addNote,
   getAll,
   getNote,
+  logNote,
   removeNote
 };
