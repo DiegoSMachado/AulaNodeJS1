@@ -19,7 +19,7 @@ var saveNotes = (notes) => {
 var addNote = (title, body) => {
   var notes = fetchNotes(); //Buscar todas as notas
   var note = {title,body};
-
+  console.log(note);
   var duplicateNotes = notes.filter((note) => note.title === title);
 
   if (duplicateNotes.length === 0) {
@@ -36,10 +36,9 @@ var getAll = () => {
 var getNote = (title) => {
   var notes = fetchNotes(); //Buscar todas as notas
   var note = {title};
-  console.log(note);
   var searchNotes = notes.filter((note) => note.title == title);
-  console.log(searchNotes);
   return searchNotes[0];
+  debbuger;
 };
 
 var removeNote = (title) => {
@@ -55,8 +54,8 @@ var removeNote = (title) => {
 
 var logNote = (note) => {
   console.log('------------');
-  console.log('Titulo: ' + note.title);
-  console.log('Titulo: ' + note.body);
+  console.log('Titulo: '+note.title);
+  console.log('Nota: '+note.body);
 };
 
 module.exports = {

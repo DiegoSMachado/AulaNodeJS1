@@ -7,12 +7,13 @@ const notes = require('./notes.js');
 
 const argv = yargs.argv;
 var command = argv._[0];
-// console.log('command: ', command);
-// console.log('Yargs ',argv);
+console.log('command: ', command);
+console.log('Yargs ',argv);
 
 if (command === 'add'){
 	var note = notes.addNote(argv.title, argv.body);
 	if (note) {
+		console.log(note);
 		console.log('Nota Criada!');
 		notes.logNote(note);
 	} else {
@@ -21,7 +22,11 @@ if (command === 'add'){
 	}
 
 } else if (command === 'list') {
-	notes.getAll();
+	var allNotes = notes.getAll();
+	var note = [];
+	allNotes.forEach((note) => {
+		notes.logNote(note);
+	});
 
 } else if (command === 'read') {
 	var note = notes.getNote(argv.title);
