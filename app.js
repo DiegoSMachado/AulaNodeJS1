@@ -10,7 +10,7 @@ const argv = yargs
 	title:{
 		describe:'Adicionando titulo',
 		demmand:true,
-		alias: 't'
+		alias: 'a'
 	},
 	body:{
 		describe:'Adicionando Nota',

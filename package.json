@@ -4,8 +4,8 @@
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
-    "yargs":"*",
-    "lodash":"*",
-    "fs":"*"
+    "fs": "*",
+    "lodash": "^4.17.10",
+    "yargs": "^11.0.0"
   }
 }
