@@ -38,7 +38,6 @@ var getNote = (title) => {
   var note = {title};
   var searchNotes = notes.filter((note) => note.title == title);
   return searchNotes[0];
-  debbuger;
 };
 
 var removeNote = (title) => {
